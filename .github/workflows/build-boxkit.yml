@@ -87,7 +87,7 @@ jobs:
     name: Build and Push Image
     runs-on: ubuntu-22.04
     needs: [check-disk-space, build]
-    if: ${{ needs.check-disk-space.outcome == 'success' && needs.build.outcome == 'success' }}
+    if: ${{ needs.check-disk-space.result == 'success' && needs.build.result == 'success' }}
     permissions:
       contents: read
       packages: write
