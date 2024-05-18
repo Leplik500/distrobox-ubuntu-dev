@@ -22,26 +22,14 @@ jobs:
     strategy:
       fail-fast: false
     steps: 
-    - name: Free Disk Space
-      uses: endersonmenezes/free-disk-space@v2
-      with:
-          remove_android: true
-          remove_dotnet: true
-          remove_haskell: true
-          remove_tool_cache: true
-          remove_swap: true
-          remove_packages: "azure-cli google-cloud-cli microsoft-edge-stable google-chrome-stable firefox postgresql* temurin-* *llvm* mysql* dotnet-sdk-*"
-          remove_packages_one_command: true
-          remove_folders: "/usr/share/swift /usr/share/miniconda /usr/share/az* /usr/share/glade* /usr/local/lib/node_modules /usr/local/share/chromium /usr/local/share/powershell"
-          testing: false
       # Checkout push-to-registry action GitHub repository
-    - name: Checkout Push to Registry action
-      uses: actions/checkout@v4
+      - name: Checkout Push to Registry action
+        uses: actions/checkout@v4
         
       # Build metadata
-    - name: Image Metadata
-      uses: docker/metadata-action@v5
-      id: meta
+      - name: Image Metadata
+        uses: docker/metadata-action@v5
+        id: meta
         with:
           images: |
             ${{ env.IMAGE_NAME }}
