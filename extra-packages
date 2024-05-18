@@ -35,7 +35,9 @@ rsync
 dnsutils
 libxcb-xkb1
 libxkbcommon-x11-0
-libegl1-mesa
+zlib1g-dev
+libreadline-dev
+libssl-dev
 bubblewrap
 curl
 icoutils
@@ -43,7 +45,6 @@ tar
 wget
 zstd
 cabextract
-wireguard-tools
 rhythmbox
 plocate
 lldb
@@ -88,7 +89,6 @@ git
 g++
 photoqt
 filezilla
-cava
 dotnet-sdk-6.0
 aspnetcore-runtime-6.0
 jupyter-notebook
