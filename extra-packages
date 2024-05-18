@@ -1,12 +1,10 @@
 ca-certificates
 desktop-file-utils
 curl
-pulseaudio
 bash-completion
 build-essential
 git
 jq
-ffmpeg
 wget
 unzip
 libc++abi-dev
@@ -49,10 +47,8 @@ wireguard-tools
 rhythmbox
 plocate
 lldb
-nautilus
 qbittorrent
 obs-studio
-audacity
 gdb
 valgrind
 micro
