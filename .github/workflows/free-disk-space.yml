@@ -11,7 +11,10 @@ jobs:
         with:
           root-reserve-mb: 512
           swap-size-mb: 1024
-          remove-dotnet: 'false'
+          remove-android: true
+          remove-haskell: true
+          remove-codeql: true
+          remove-docker-images: true
       - name: Checkout
         uses: actions/checkout@v3
 
