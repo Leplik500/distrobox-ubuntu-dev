@@ -18,6 +18,11 @@ RUN apt-get update &&   \
         $(cat extra-packages | xargs) && \
     rm -rd /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y locales && \
+      sed -i '/ru_RU.UTF-8/s/^# //g' /etc/locale.gen && \
+      locale-gen && \
+      update-locale LC_ALL="es_ES.UTF-8"
+
 # Install VHS
 # RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
 #     jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
