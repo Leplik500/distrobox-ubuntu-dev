@@ -21,7 +21,7 @@ RUN apt-get update &&   \
 RUN apt-get update && apt-get install -y locales && \
       sed -i '/ru_RU.UTF-8/s/^# //g' /etc/locale.gen && \
       locale-gen && \
-      update-locale LC_ALL="es_ES.UTF-8"
+      update-locale LC_ALL="ru_RU.UTF-8"
 
 # Install VHS
 # RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
