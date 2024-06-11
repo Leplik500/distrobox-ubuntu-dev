@@ -29,9 +29,8 @@ RUN apt-get update && apt-get install -y wget gpg && \
       echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | tee /etc/apt/sources.list.d/vscode.list > /dev/null && \
       apt install -y apt-transport-https && \
       apt update && \
-      apt install -y code
-
-rm -f packages.microsoft.gpg
+      apt install -y code && \
+      rm -f packages.microsoft.gpg
 
 # Install VHS
 # RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
