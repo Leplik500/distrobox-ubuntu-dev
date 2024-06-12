@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y locales && \
       locale-gen && \
       update-locale LC_ALL="ru_RU.UTF-8"
 
+RUN systemctl enable redis-server
+
 RUN apt-get update && apt-get install -y wget gpg && \
       wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
       install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg && \
