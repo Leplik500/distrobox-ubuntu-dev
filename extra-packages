@@ -85,6 +85,8 @@ diffstat
 gettext
 patch
 redis
+systemd
+libpam-systemd
 patchutils
 systemtap
 librsvg2-common
