@@ -102,5 +102,4 @@ libnss3-tools
 mkcert
 podman
 podman-docker
-podman-compose
 crun
