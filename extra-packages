@@ -92,6 +92,9 @@ systemtap
 librsvg2-common
 appmenu-gtk-module-common
 appmenu-gtk2-module
+libnss3-tools
+mkcert
+
 appmenu-gtk3-module
 libappmenu-gtk-parser-dev-common
 libappmenu-gtk2-parser-dev
