@@ -101,3 +101,7 @@ libappmenu-gtk3-parser0
 nginx
 libnss3-tools
 mkcert
+podman
+podman-docker
+podman-compose
+crun
