@@ -37,18 +37,16 @@ RUN apt-get update && apt-get install -y wget gpg && \
 RUN usermod --add-subuids 10000-65536 root && \
       usermod --add-subgids 10000-65536 root
 
-RUN cat << EOF > /etc/containers/containers.conf
-[containers] 
-netns="host" 
-userns="host"
-ipcns="host" 
-utsns="host" 
-cgroupns="host"
-log_driver="k8s-file"
-[engine]
-cgroup_manager="cgroupfs"
-events_logger="file"
-EOF
+RUN echo '[containers]' > /etc/containers/containers.conf && \
+    echo 'netns="host"' >> /etc/containers/containers.conf && \
+    echo 'userns="host"' >> /etc/containers/containers.conf && \
+    echo 'ipcns="host"' >> /etc/containers/containers.conf && \
+    echo 'utsns="host"' >> /etc/containers/containers.conf && \
+    echo 'cgroupns="host"' >> /etc/containers/containers.conf && \
+    echo 'log_driver = "k8s-file"' >> /etc/containers/containers.conf && \
+    echo '[engine]' >> /etc/containers/containers.conf && \
+    echo 'cgroup_manager = "cgroupfs"' >> /etc/containers/containers.conf && \
+    echo 'events_logger="file"' >> /etc/containers/containers.conf
 
 # Install VHS
 # RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
