@@ -70,7 +70,6 @@ dotnet-sdk-7.0
 aspnetcore-runtime-7.0
 xclip
 netcat
-docker
 fish
 make
 cmake
