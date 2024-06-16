@@ -34,8 +34,8 @@ RUN apt-get update && apt-get install -y wget gpg && \
       apt install -y code && \
       rm -f packages.microsoft.gpg
 
-RUN usermod --add-subuids 10000-65536 $USER && \
-      usermod --add-subgids 10000-65536 $USER
+RUN usermod --add-subuids 10000-65536 root && \
+      usermod --add-subgids 10000-65536 root
 
 RUN cat << EOF > /etc/containers/containers.conf
       [containers] 
