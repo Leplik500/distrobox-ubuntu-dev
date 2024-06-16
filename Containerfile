@@ -48,6 +48,8 @@ RUN echo '[containers]' > /etc/containers/containers.conf && \
     echo 'cgroup_manager = "cgroupfs"' >> /etc/containers/containers.conf && \
     echo 'events_logger="file"' >> /etc/containers/containers.conf
 
+RUN ln -sf /run/user/1000/podman/podman.sock /run/user/1000/docker.sock
+
 # Install VHS
 # RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
 #     jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
