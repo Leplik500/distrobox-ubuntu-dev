@@ -34,6 +34,21 @@ RUN apt-get update && apt-get install -y wget gpg && \
       apt install -y code && \
       rm -f packages.microsoft.gpg
 
+RUN usermod --add-subuids 10000-65536 $USER && \
+      usermod --add-subgids 10000-65536 $USER && \
+      cat << EOF > /etc/containers/containers.conf && \
+      [containers] && \
+      netns="host" && \
+      userns="host" && \
+      ipcns="host" && \
+      utsns="host" && \
+      cgroupns="host" && \
+      log_driver = "k8s-file" && \
+      [engine] && \
+      cgroup_manager = "cgroupfs" && \
+      events_logger="file" && \
+      EOF
+
 # Install VHS
 # RUN DOWNLOAD_URL=$(curl -s https://api.github.com/repos/charmbracelet/vhs/releases/latest | \
 #     jq -r '.assets[] | select(.name| test(".*.amd64.deb$")).browser_download_url') \
