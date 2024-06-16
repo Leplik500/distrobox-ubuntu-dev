@@ -59,9 +59,6 @@ krusader
 remmina
 putty
 vagrant
-cpu-x
-cmatrix
-virt-manager
 isomd5sum
 mono-complete
 dotnet-sdk-8.0
@@ -75,10 +72,7 @@ make
 cmake
 git
 g++
-dotnet-sdk-6.0
-aspnetcore-runtime-6.0
 jupyter-notebook
-labplot
 file
 diffstat
 gettext
