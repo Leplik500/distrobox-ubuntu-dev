@@ -84,6 +84,8 @@ librsvg2-common
 appmenu-gtk-module-common
 appmenu-gtk2-module
 appmenu-gtk3-module
+xfce4
+xfce4-goodies
 nginx
 libnss3-tools
 mkcert
